@@ -22,6 +22,7 @@ $(window).bind("load", function() {
 	
 	var RecalculateTiles = function(){
 		
+		// Create tiles array
 		tiles = new Array([]);
 		tiles = createArray(gridHeight(), gridWidth());
 	
