@@ -20,9 +20,6 @@ $(window).bind("load", function() {
 	
 	var tiles = null;
 	
-	$("#conway-canvas").attr("width", tileWidth * this.options[this.selectedIndex].text)
-	$("#conway-canvas").attr("height", tileWidth * this.options[this.selectedIndex].text);
-	
 	var RecalculateTiles = function(){
 		
 		tiles = new Array([]);
