@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8"/>
+
+
+	<head>
+		
+	</head>
+
+	<body>
+		<div>
+			Width
+			<select id="width-select">
+				<option value="10">10</option>
+				<option value="20" selected="selected">20</option>
+				<option value="30">30</option>
+				<option value="40">40</option>
+				<option value="50">50</option>
+			</select>
+			Height
+			<select id="height-select">
+				<option value="10">10</option>
+				<option value="20" selected="selected">20</option>
+				<option value="30">30</option>
+				<option value="40">40</option>
+				<option value="50">50</option>
+			</select>
+		</div>
+		<canvas id="conway-canvas" width="0" height="0" style="border:1px solid #000000;">
+		</canvas>
+	</body>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="./scripts/utils.js"></script>
+	<script src="./scripts/tile.js"></script>
+	<script src="./scripts/game.js"></script>	
+	<link rel="stylesheet" type="text/css" href="./styles/site.css">
+
+</html>
