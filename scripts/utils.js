@@ -9,3 +9,15 @@ function createArray(length) {
 
     return arr;
 }
+function CopyArray(arr){
+	
+	if(!arr)
+		return;
+	
+	var newArray = [];
+
+	for (var i = 0; i < arr.length; i++)
+		newArray[i] = arr[i].slice();
+	
+	return newArray;
+}

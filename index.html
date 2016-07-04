@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<meta charset="utf-8"/>
-
-
 	<head>
-		
 	</head>
 
 	<body>
@@ -25,12 +22,15 @@
 				<option value="40">40</option>
 				<option value="50">50</option>
 			</select>
+			<button id="start-simulate">Simulate!</button>
+			<button id="stop-simulate">Stop!</button>
 		</div>
-		<canvas id="conway-canvas" width="0" height="0" style="border:1px solid #000000;">
+		<canvas id="conway-canvas" width="400" height="400" style="border:1px solid #000000;">
 		</canvas>
 	</body>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="./scripts/buffer.js"></script>
 	<script src="./scripts/utils.js"></script>
 	<script src="./scripts/tile.js"></script>
 	<script src="./scripts/game.js"></script>	
