@@ -49,7 +49,7 @@ $(window).bind("load", function() {
 		
 		// Create tiles array
 		tiles = new Array([]);
-		tiles = createArray(width, height);
+		tiles = CreateArray(width, height);
 		
 		bufferHandler = new BufferHandler(width, height);
 	
@@ -164,6 +164,15 @@ $(window).bind("load", function() {
 
 		simulate = false;
 		clearInterval(simulateRefreshId);
+	});
+	
+	$("#clear-simulate").on("click", function(){
+		
+		// Don't clear the grid when simulating
+		if(simulate)
+			return;
+		
+		bufferHandler.ClearAllBuffers();
 	});
 	
 });

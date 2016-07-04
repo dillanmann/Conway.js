@@ -1,5 +1,8 @@
 "use strict";
 
+// A lot of this code is a port directly from the C++ application and 
+// may not follow the best practices for JavaScript.
+
 function Buffer(bufferWidth, bufferHeight){
 
 	// Size of buffers
@@ -7,8 +10,8 @@ function Buffer(bufferWidth, bufferHeight){
 	this.bufferHeight = bufferHeight;
 
 	// Underlying storage containers
-	this.bufData = createArray(bufferWidth, bufferHeight);
-	this.neighbours = createArray(bufferWidth, bufferHeight);
+	this.bufData = CreateArray(bufferWidth, bufferHeight);
+	this.neighbours = CreateArray(bufferWidth, bufferHeight);
 	
 	// Set to safe values after initialization
 	for (var i = 0; i < this.bufferWidth; ++i){
@@ -72,3 +75,16 @@ BufferHandler.prototype.ClearBack = function(){
 		}
 	}
 }
+
+// Clears both buffers to all false
+BufferHandler.prototype.ClearAllBuffers = function(){
+	
+	// Set back buffer to all false values
+	for (var i = 0; i < this.bufferWidth; i++){
+		for (var j = 0; j < this.bufferHeight; j++){
+			this.pFront.bufData[i][j] = false;
+			this.pBack.bufData[i][j] = false;
+		}
+	}
+}
+
