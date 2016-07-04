@@ -14,6 +14,7 @@ $(window).bind("load", function() {
 	var tiles = null;
 	var bufferHandler = null;
 	var simulate = false;
+	var simulateRefreshId = null;
 	
 	// ---------------------------------------------------------------------------------
 	// Simulate/Init/Draw functions
@@ -156,6 +157,8 @@ $(window).bind("load", function() {
 			return;
 		
 		simulate = true;
+		
+		// DEBUG: simulate once per button press to prevent it getting out of hand for now
 		Simulate();
 		//simulateRefreshId = setInterval(Simulate, 16);
 	});
