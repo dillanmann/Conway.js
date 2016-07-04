@@ -82,7 +82,7 @@ $(window).bind("load", function() {
 							continue;
 						}
 
-						if(ValidIndex(x+i, y+j) && bufferHandler.GetBack().bufData[x+i][y+j] && !(i === 0 && j === 0)){
+						if(ValidIndex(x+i, y+j) && bufferHandler.GetFront().bufData[x+i][y+j] && !(i === 0 && j === 0)){
 							neighbours++;
 						}
 					}
@@ -105,7 +105,7 @@ $(window).bind("load", function() {
 				}
 			}
 		}
-
+		
 		bufferHandler.SwapBuffers();
 		bufferHandler.ClearBack();
 	}
@@ -139,7 +139,6 @@ $(window).bind("load", function() {
 	});
 	
 	 $("#conway-canvas").click(function(e){
-		 
 		 if(simulate)
 			 return;
 		 
@@ -147,20 +146,15 @@ $(window).bind("load", function() {
 		var x = Math.floor((e.pageX-$("#conway-canvas").offset().left) / tileWidth);
 		var y = Math.floor((e.pageY-$("#conway-canvas").offset().top) / tileHeight);
 		
-		//tiles[x][y].FlipState();
 		bufferHandler.AlternateFront(x, y);
 	});
 	
 	$("#start-simulate").on("click", function(){
-		
 		if(simulate)
 			return;
 		
 		simulate = true;
-		
-		// DEBUG: simulate once per button press to prevent it getting out of hand for now
-		Simulate();
-		//simulateRefreshId = setInterval(Simulate, 16);
+		simulateRefreshId = setInterval(Simulate, 250);
 	});
 	
 	$("#stop-simulate").on("click", function(){
