@@ -15,6 +15,8 @@ $(window).bind("load", function() {
 	var bufferHandler = null;
 	var simulate = false;
 	var simulateRefreshId = null;
+	var aliveColour = "#008000"
+	var deadColour = "#ff0000";
 	
 	// ---------------------------------------------------------------------------------
 	// Simulate/Init/Draw functions
@@ -31,11 +33,11 @@ $(window).bind("load", function() {
 			for(var j = 0; j < gridHeight(); ++j){
 				
 				// if alive, draw tile green. otherwise red.
-				if (bufferHandler.GetFront().bufData[i][j]){
-					tiles[i][j].SetFill("#008000");
+				if (bufferHandler.GetFront().bufData[i][j] === true){
+					tiles[i][j].SetFill(aliveColour);
 				}
 				else{
-					tiles[i][j].SetFill("#FF0000");
+					tiles[i][j].SetFill(deadColour);
 				}
 				tiles[i][j].Draw();
 			}
@@ -82,7 +84,7 @@ $(window).bind("load", function() {
 							continue;
 						}
 
-						if(ValidIndex(x+i, y+j) && bufferHandler.GetFront().bufData[x+i][y+j] && !(i === 0 && j === 0)){
+						if(ValidIndex(x+i, y+j) && bufferHandler.GetFront().bufData[x+i][y+j] === true && !(i === 0 && j === 0)){
 							neighbours++;
 						}
 					}
@@ -173,6 +175,16 @@ $(window).bind("load", function() {
 			return;
 		
 		bufferHandler.ClearAllBuffers();
+	});
+	
+	$("#colour-dead").on("change", function(){
+		console.log($(this).val());
+		deadColour = $(this).val();
+	});
+	
+	$("#colour-alive").on("change", function(){
+		console.log($(this).val());
+		aliveColour = $(this).val();
 	});
 	
 });

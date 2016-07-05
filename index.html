@@ -6,42 +6,48 @@
 	</head>
 
 	<body>
-		<div>
-			Width
-			<select id="width-select">
-				<option value="10">10</option>
-				<option value="20" selected="selected">20</option>
-				<option value="30">30</option>
-				<option value="40">40</option>
-				<option value="50">50</option>
-			</select>
-			Height
-			<select id="height-select">
-				<option value="10">10</option>
-				<option value="20" selected="selected">20</option>
-				<option value="30">30</option>
-				<option value="40">40</option>
-				<option value="50">50</option>
-			</select>
-			<button id="start-simulate">Simulate!</button>
-			<button id="stop-simulate">Stop!</button>
-			<button id="clear-simulate">Clear!</button>
+		<div class="jumbotron text-center">
+			<h4>Conway.js - Conway's Game Of Life in JavaScript/HTML5</h4>
+			<div class="grid-dimension-select">
+				Width
+				<select id="width-select">
+					<option value="10">10</option>
+					<option value="20" selected="selected">20</option>
+					<option value="30">30</option>
+					<option value="40">40</option>
+					<option value="50">50</option>
+				</select>
+				Height
+				<select id="height-select">
+					<option value="10">10</option>
+					<option value="20" selected="selected">20</option>
+					<option value="30">30</option>
+				</select>
+				<button id="start-simulate" class="btn btn-default">Simulate!</button>
+				<button id="stop-simulate" class="btn btn-default">Stop!</button>
+				<button id="clear-simulate" class="btn btn-default">Clear!</button>
+				Alive <input id="colour-alive" value="#008000" type="color"/>
+				Dead <input id="colour-dead" value="#ff0000" type="color"/>
+			</div>
 		</div>
-		<canvas id="conway-canvas" width="400" height="400" style="border:1px solid #000000;">
-		</canvas>
+		<div class="container">
+			<canvas id="conway-canvas" width="400" height="400"\>
+		</div>
 	</body>
 	
-	<footer>
+	<footer class="jumbotron text-center">
 		<a href="https://github.com/dillanmann/Conway.js">source</a>
 		<br>
 		<a href="https://github.com/dillanmann/Conway.js/blob/gh-pages/README.md">instructions</a>
 	</footer>
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="./scripts/buffer.js"></script>
 	<script src="./scripts/utils.js"></script>
 	<script src="./scripts/tile.js"></script>
 	<script src="./scripts/game.js"></script>	
 	<link rel="stylesheet" type="text/css" href="./styles/site.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 </html>
