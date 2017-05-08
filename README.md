@@ -26,4 +26,4 @@ I'm a Games Programmer by education with a background in C++ and C# but work in 
 <li>If a cell is dead and has exactly 3 neighbours who are alive, it becomes <b>alive</b> through <b>reproduction</b>.</li>
 </ul>
 </p>
-Written with [StackEdit](https://stackedit.io/).
+Written with StackEdit (https://stackedit.io/).
